@@ -37,8 +37,6 @@ No coding skills required. Sign up for your free account here -
 2. 
 3. 
 4. 
-5. 
-6. 
 
 == Changelog ==
 
