@@ -29,7 +29,7 @@ AdPushup is an automated advanced A/B testing (a proprietary multi-arm bandit al
 
 No coding skills required. Sign up for your free account here -
 
-www.adpushup.com
+[www.adpushup.com](http://adpushup.com)
 
 
 == Changelog ==
