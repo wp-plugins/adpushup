@@ -11,8 +11,7 @@ class AdPushup_Settings {
     function __construct() {
 	add_action('admin_menu', function () {
 	    add_options_page(
-		    'AdPushUp Settings', 'AdPushUp Settings', 'manage_options', 'adpushup_settings_page', array($this, 'settings_page')
-	    );
+		    'AdPushUp Settings', 'AdPushUp Settings', 'manage_options', 'adpushup_settings_page', 'adpdsaettings_page');
 	});
 	add_action('admin_notices', array($this, 'action_admin_notices'));
     }
@@ -48,7 +47,13 @@ class AdPushup_Settings {
 	}
     }
 
-    function settings_page() {
+ 
+
+}
+
+$dasdas = new AdPushup_Settings();
+
+   function adpdsaettings_page() {
 	$auto_close = isset($_REQUEST['auto_close']) && 'yes' == $_REQUEST['auto_close'];
 	if (isset($_REQUEST['adpushup_site_id'])) {
 	    $adpushup_site_id = abs($_REQUEST['adpushup_site_id']);
@@ -73,6 +78,5 @@ class AdPushup_Settings {
 	<?php
     }
 
-}
 
-new AdPushup_Settings();
+
