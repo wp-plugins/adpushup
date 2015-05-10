@@ -49,7 +49,6 @@ class AdPushup_Settings {
     }
 
     function settings_page() {
-	echo 'dddddddd';
 	$auto_close = isset($_REQUEST['auto_close']) && 'yes' == $_REQUEST['auto_close'];
 	if (isset($_REQUEST['adpushup_site_id'])) {
 	    $adpushup_site_id = abs($_REQUEST['adpushup_site_id']);
