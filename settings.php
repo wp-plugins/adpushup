@@ -11,7 +11,7 @@ class AdPushup_Settings {
     function __construct() {
 	add_action('admin_menu', function () {
 	    add_options_page(
-		    'AdPushUp Settings', 'AdPushUp Settings', 'manage_options', 'adpushup_settings_page', 'adpushup_settings_page'
+		    'AdPushup Settings', 'AdPushup Settings', 'manage_options', 'adpushup_settings_page', 'adpushup_settings_page'
 	    );
 	});
 	add_action('admin_notices', array($this, 'action_admin_notices'));
@@ -38,12 +38,12 @@ class AdPushup_Settings {
                     }
 		    function AdPushupSettingResult(result) {
 			if ('success' == result) {
-			    jQuery('#adpushup_error_site_id')[0].outerHTML = \"<div class='updated'><p>AdPushup Code updated successfully</p></div>\";
+			    jQuery('#adpushup_error_site_id')[0].outerHTML = \"<div class='updated'><p>AdPushup site ID updated successfully</p></div>\";
 			}
 		    }
                 </script>
                 
-		<div class='error' id='adpushup_error_site_id'><p>Please <b><a href='JavaScript:newPopup(\"$url\");'>install AdPushup site ID</a><b> to use it.</p></div>
+		<div class='error' id='adpushup_error_site_id'><p><b>Start optimizing your ads, Configure AdPushup plugin <a href='JavaScript:newPopup(\"$url\");'>here</a>.<b></p></div>
 	    ";
 	}
     }
@@ -59,7 +59,7 @@ function adpushup_settings_page() {
 
 	if (isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], '_adpushup_site_id')) {
 	    update_option('adpushup_site_id', $adpushup_site_id);
-	    echo "<br/><div class='updated'><p>Code updated successfully</p></div>";
+	    echo "<br/><div class='updated'><p>AdPushup site ID updated successfully</p></div>";
 	    if ($auto_close) {
 		echo "<script type='text/javascript'>window.opener.AdPushupSettingResult('success');window.close();</script>";
 	    }
@@ -68,11 +68,12 @@ function adpushup_settings_page() {
 	$adpushup_site_id = get_option('adpushup_site_id', '');
     }
     ?>
-          <h3>Please enter AdPushup code</h3>
+          <h3>AdPushup Site ID</h3>
           <form method="POST" name="adpushup_submission_form">
     <?php wp_nonce_field('_adpushup_site_id') ?>
     	  <input type="number" name="adpushup_site_id" required size="50" value="<?php echo esc_attr($adpushup_site_id) ?>" />
-    <?php submit_button('Update code'); ?>
+    <?php submit_button('Save'); ?>
           </form>
+		  Note : Your AdPushup Site ID can be found at <a href="http://app.adpushup.com/user/login" target="_blank">AdPushup Dashboard</a>.
     <?php
 }
