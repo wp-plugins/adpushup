@@ -4,11 +4,10 @@
   Plugin Name: AdPushup
   Plugin URI: http://adpushup.com
   Description: Maximize your AdSense Ad Revenue!
-  Version: 1.1
+  Version: 1.2
   Author: AdPushup
   Author URI: http://www.adpushup.com
   License: GPL2
-  Updated: 02-04-2015
  */
 
 // Prevent direct access to file
