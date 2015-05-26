@@ -3,7 +3,7 @@ Contributors: AdPushup
 Tags: Adsense, Optimization, Revenue
 Requires at least: 3.5
 Tested up to: 4.2.2
-Stable tag: 0.3
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,11 +37,3 @@ No coding skills required. Sign up for your free account here -
 2. 
 3. 
 4. 
-
-== Changelog ==
-
-= 1.1 =
-* Minor Enhancements
-
-= 1.0 =
-* Initial release.

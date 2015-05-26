@@ -4,7 +4,7 @@
   Plugin Name: AdPushup
   Plugin URI: http://adpushup.com
   Description: Maximize your AdSense Ad Revenue!
-  Version: 0.3
+  Version: 0.4
   Author: AdPushup
   Author URI: http://www.adpushup.com
   License: GPL2
@@ -16,7 +16,7 @@ defined('ABSPATH') or die("Cheatin' uh?");
 class AdPushup {
 
     public $plugin_dir;
-    public $version = '0.3';
+    public $version = '0.4';
     public $update_url;
     public $platform;
     public $plugin_basename;

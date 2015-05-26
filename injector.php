@@ -74,7 +74,7 @@ class AdPushup_Injector {
     var s = document.createElement("script");
     s.type = "text/javascript";
     s.async = true;
-    s.src = "//optimize.adpushup.com/ap.js";
+    s.src = "//optimize.adpushup.com/' . esc_js($adpushup_site_id ? $adpushup_site_id . '/' : '') . 'ap.js";
     (document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(s);
 })();
 </script>
