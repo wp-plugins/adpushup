@@ -60,7 +60,7 @@ class AdPushup_Injector {
 //                      AdPushup noscript code ends
 //                      AdPushup script code starts
         echo '
-<script type="text/javascript">
+<script data-cfasync="false" type="text/javascript">
 (function () {
     var c = (window.adpushup = window.adpushup || {}).config = (window.adpushup.config || {});
     c.siteDomain= "' . $site_domain . '";
