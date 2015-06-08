@@ -9,12 +9,14 @@ defined('ABSPATH') or die("Cheatin' uh?");
 class AdPushup_Settings {
 
     function __construct() {
-	add_action('admin_menu', function () {
+	add_action('admin_menu', array($this, 'action_admin_menu'));
+	add_action('admin_notices', array($this, 'action_admin_notices'));
+    }
+
+    function action_admin_menu() {
 	    add_options_page(
 		    'AdPushup Settings', 'AdPushup Settings', 'manage_options', 'adpushup_settings_page', 'adpushup_settings_page'
 	    );
-	});
-	add_action('admin_notices', array($this, 'action_admin_notices'));
     }
 
     function action_admin_notices() {
