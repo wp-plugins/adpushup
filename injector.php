@@ -62,20 +62,21 @@ class AdPushup_Injector {
         echo '
 <script data-cfasync="false" type="text/javascript">
 (function () {
-    var c = (window.adpushup = window.adpushup || {}).config = (window.adpushup.config || {});
-    c.siteDomain= "' . $site_domain . '";
-    c.pluginVer= ' . $plugin_version . ';
-    c.cms = "wordpress";
-    c.pageGroup = "' . $page_group . '";
-    c.pageUrl = "' . esc_js($URI) . '";
-    c.ref = "' . esc_js($referer) . '";
-    c.siteId = "' . esc_js($adpushup_site_id) . '";        
-    
-    var s = document.createElement("script");
+	var s = document.createElement("script");
     s.type = "text/javascript";
     s.async = true;
     s.src = "//optimize.adpushup.com/' . esc_js($adpushup_site_id ? $adpushup_site_id . '/' : '') . 'ap.js";
     (document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(s);
+
+    ((window.adpushup = window.adpushup || {}).configure = (window.adpushup.configure || [])).push({
+	    "siteId": "' . esc_js($adpushup_site_id) . '",
+	    "pageGroup": "' . $page_group . '",
+	    "siteDomain": "' . $site_domain . '",
+	    "pageUrl": "' . esc_js($URI) . '",
+	    "referrer": "' . esc_js($referer) . '",
+	    "cms": "wordpress",
+	    "pluginVer": "' . $plugin_version . '"
+    });
 })();
 </script>
 ';
