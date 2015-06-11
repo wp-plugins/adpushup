@@ -10,7 +10,7 @@ defined('ABSPATH') or die("Cheatin' uh?");
 class AdPushup_Injector {
 
     function __construct() {
-        add_action('wp_head', array($this, 'action_wp_head'));
+        add_action('wp_head', array($this, 'action_wp_head'), 1);
         add_filter('the_content', array($this, 'filter_the_content'));
     }
 
